@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/TitleScreen.gd" type="Script" id=1]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rows" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Padding" type="Label" parent="Rows"]
+margin_top = 260.0
+margin_right = 1004.0
+margin_bottom = 274.0
+size_flags_vertical = 6
+
+[node name="Start" type="Button" parent="Rows"]
+margin_top = 538.0
+margin_right = 89.0
+margin_bottom = 558.0
+size_flags_horizontal = 0
+text = "TITLE_START"
+flat = true
+align = 0
+
+[node name="Exit" type="Button" parent="Rows"]
+margin_top = 562.0
+margin_right = 78.0
+margin_bottom = 582.0
+size_flags_horizontal = 0
+text = "TITLE_EXIT"
+flat = true
+align = 0
+
+[node name="Padding2" type="Label" parent="Rows"]
+margin_top = 586.0
+margin_right = 1004.0
+margin_bottom = 600.0
+[connection signal="pressed" from="Rows/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Rows/Exit" to="." method="_on_Exit_pressed"]
