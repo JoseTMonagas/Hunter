@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Meshes/Ceiling.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Meshes/WorldEnvironment.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Meshes/Floor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Meshes/Wall1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Meshes/Wall0.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/Meshes/Ceiling.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menu/Meshes/WorldEnvironment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Menu/Meshes/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/Meshes/Wall1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/Meshes/Wall0.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Menu/TitleScreen.gd" type="Script" id=6]
 [ext_resource path="res://Resources/dynamicCreepsterFont.tres" type="DynamicFontData" id=7]
 

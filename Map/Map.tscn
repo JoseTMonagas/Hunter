@@ -2,11 +2,12 @@
 
 [ext_resource path="res://Map/Map.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Meshes/Wall0.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Meshes/WorldEnvironment.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Meshes/Ceiling.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Meshes/Wall1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Meshes/Floor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Menu/Meshes/Wall0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/Meshes/WorldEnvironment.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/Meshes/Ceiling.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/Meshes/Wall1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menu/Meshes/Floor.tscn" type="PackedScene" id=7]
+
 
 [node name="Map" type="Spatial"]
 script = ExtResource( 1 )

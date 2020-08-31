@@ -53,6 +53,10 @@ config/icon="res://icon.png"
 3d_render/layer_4="Enemy"
 3d_physics/layer_4="Enemy"
 
+[locale]
+
+translations=PoolStringArray( "res://Resources/hunter translations sheet.en.translation", "res://Resources/hunter translations sheet.es.translation", "res://Resources/hunter translations sheet.fr.translation" )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

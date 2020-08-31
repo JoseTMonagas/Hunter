@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://Resources/hunter translations sheet.en.translation", "res://Resources/hunter translations sheet.es.translation", "res://Resources/hunter translations sheet.fr.translation" ]
+
+source_file="res://Resources/hunter translations sheet.csv"
+dest_files=[ "res://Resources/hunter translations sheet.en.translation", "res://Resources/hunter translations sheet.es.translation", "res://Resources/hunter translations sheet.fr.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
