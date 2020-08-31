@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Resources/GUIFontTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Player/sfx/gunshot.wav" type="AudioStream" id=3]
 [ext_resource path="res://Player/bullet.png" type="Texture" id=4]
 [ext_resource path="res://Player/life.png" type="Texture" id=5]
@@ -117,6 +118,7 @@ one_shot = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
+theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -141,42 +143,44 @@ __meta__ = {
 }
 
 [node name="Padding" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 61.0
+margin_top = 53.0
 margin_right = 1004.0
-margin_bottom = 75.0
+margin_bottom = 73.0
 size_flags_vertical = 6
 
 [node name="WaveLabel" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 140.0
+margin_top = 130.0
 margin_right = 1004.0
-margin_bottom = 154.0
+margin_bottom = 150.0
+theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.686275, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.815686, 0.682353, 0.682353, 1 )
 align = 1
 valign = 1
 
 [node name="Padding5" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 219.0
+margin_top = 207.0
 margin_right = 1004.0
-margin_bottom = 233.0
+margin_bottom = 227.0
 size_flags_vertical = 6
 
 [node name="ReloadingLabel" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 298.0
+margin_top = 284.0
 margin_right = 1004.0
-margin_bottom = 312.0
+margin_bottom = 304.0
+theme = ExtResource( 2 )
 align = 1
 
 [node name="Padding4" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 377.0
+margin_top = 361.0
 margin_right = 1004.0
-margin_bottom = 391.0
+margin_bottom = 381.0
 size_flags_vertical = 6
 
 [node name="Bullets" type="HBoxContainer" parent="HUD/GUI/Rows"]
-margin_top = 456.0
+margin_top = 438.0
 margin_right = 1004.0
-margin_bottom = 488.0
+margin_bottom = 470.0
 
 [node name="Bullet" type="TextureRect" parent="HUD/GUI/Rows/Bullets"]
 margin_right = 32.0
@@ -241,14 +245,14 @@ __meta__ = {
 }
 
 [node name="Padding2" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 492.0
+margin_top = 474.0
 margin_right = 1004.0
-margin_bottom = 506.0
+margin_bottom = 494.0
 
 [node name="Hearts" type="HBoxContainer" parent="HUD/GUI/Rows"]
-margin_top = 510.0
+margin_top = 498.0
 margin_right = 1004.0
-margin_bottom = 542.0
+margin_bottom = 530.0
 
 [node name="Heart" type="TextureRect" parent="HUD/GUI/Rows/Hearts"]
 margin_right = 32.0
@@ -268,12 +272,13 @@ margin_bottom = 32.0
 texture = ExtResource( 5 )
 
 [node name="Padding3" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 546.0
+margin_top = 534.0
 margin_right = 1004.0
-margin_bottom = 560.0
+margin_bottom = 554.0
 
 [node name="ScoreLabel" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 564.0
+margin_top = 558.0
 margin_right = 1004.0
 margin_bottom = 578.0
+theme = ExtResource( 2 )
 [connection signal="timeout" from="Reloading" to="." method="_on_Reloading_timeout"]

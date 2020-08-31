@@ -1,94 +1,23 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Map/Map.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Map/metall005-new-tileable.png" type="Texture" id=3]
-[ext_resource path="res://Map/metall001-new-tileable.png" type="Texture" id=4]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 3 )
-uv1_triplanar = true
-
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
-size = Vector3( 5, 0.5, 20 )
-
-[sub_resource type="ConcavePolygonShape" id=3]
-data = PoolVector3Array( -2.5, 0.25, 10, 2.5, 0.25, 10, -2.5, -0.25, 10, 2.5, 0.25, 10, 2.5, -0.25, 10, -2.5, -0.25, 10, 2.5, 0.25, -10, -2.5, 0.25, -10, 2.5, -0.25, -10, -2.5, 0.25, -10, -2.5, -0.25, -10, 2.5, -0.25, -10, 2.5, 0.25, 10, 2.5, 0.25, -10, 2.5, -0.25, 10, 2.5, 0.25, -10, 2.5, -0.25, -10, 2.5, -0.25, 10, -2.5, 0.25, -10, -2.5, 0.25, 10, -2.5, -0.25, -10, -2.5, 0.25, 10, -2.5, -0.25, 10, -2.5, -0.25, -10, 2.5, 0.25, 10, -2.5, 0.25, 10, 2.5, 0.25, -10, -2.5, 0.25, 10, -2.5, 0.25, -10, 2.5, 0.25, -10, -2.5, -0.25, 10, 2.5, -0.25, 10, -2.5, -0.25, -10, 2.5, -0.25, 10, 2.5, -0.25, -10, -2.5, -0.25, -10 )
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 4 )
-uv1_triplanar = true
-
-[sub_resource type="CubeMesh" id=5]
-material = SubResource( 4 )
-size = Vector3( 1, 5, 20 )
-
-[sub_resource type="ConcavePolygonShape" id=6]
-data = PoolVector3Array( -0.5, 2.5, 10, 0.5, 2.5, 10, -0.5, -2.5, 10, 0.5, 2.5, 10, 0.5, -2.5, 10, -0.5, -2.5, 10, 0.5, 2.5, -10, -0.5, 2.5, -10, 0.5, -2.5, -10, -0.5, 2.5, -10, -0.5, -2.5, -10, 0.5, -2.5, -10, 0.5, 2.5, 10, 0.5, 2.5, -10, 0.5, -2.5, 10, 0.5, 2.5, -10, 0.5, -2.5, -10, 0.5, -2.5, 10, -0.5, 2.5, -10, -0.5, 2.5, 10, -0.5, -2.5, -10, -0.5, 2.5, 10, -0.5, -2.5, 10, -0.5, -2.5, -10, 0.5, 2.5, 10, -0.5, 2.5, 10, 0.5, 2.5, -10, -0.5, 2.5, 10, -0.5, 2.5, -10, 0.5, 2.5, -10, -0.5, -2.5, 10, 0.5, -2.5, 10, -0.5, -2.5, -10, 0.5, -2.5, 10, 0.5, -2.5, -10, -0.5, -2.5, -10 )
-
-[sub_resource type="Environment" id=7]
-background_mode = 1
-background_color = Color( 0.152941, 0.0431373, 0.0431373, 1 )
-ambient_light_color = Color( 0.415686, 0.0627451, 0.0627451, 1 )
-ambient_light_energy = 4.0
-fog_enabled = true
-fog_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
-fog_sun_color = Color( 0.87451, 0.607843, 0.0745098, 1 )
-fog_depth_begin = 0.0
-fog_transmit_curve = 0.0853775
-fog_height_enabled = true
-fog_height_curve = 3.13834
-adjustment_brightness = 3.81
+[ext_resource path="res://Meshes/Wall0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Meshes/WorldEnvironment.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Meshes/Ceiling.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Meshes/Wall1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Meshes/Floor.tscn" type="PackedScene" id=7]
 
 [node name="Map" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Floor" type="MeshInstance" parent="."]
-transform = Transform( 1, 2.1285e-10, -5.18475e-13, -2.1285e-10, 0.999988, -0.00486945, -5.18475e-13, 0.00486945, 0.999988, 0, 0, 0 )
-mesh = SubResource( 2 )
-material/0 = null
+[node name="Floor" parent="." instance=ExtResource( 7 )]
 
-[node name="StaticBody" type="StaticBody" parent="Floor"]
-collision_mask = 14
+[node name="Ceiling" parent="." instance=ExtResource( 5 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
-shape = SubResource( 3 )
+[node name="Wall0" parent="." instance=ExtResource( 3 )]
 
-[node name="Ceiling" type="MeshInstance" parent="."]
-transform = Transform( 1, 2.1285e-10, -5.18475e-13, -2.1285e-10, 0.999988, -0.00486945, -5.18475e-13, 0.00486945, 0.999988, 0, 4, 0 )
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Ceiling"]
-collision_mask = 14
-
-[node name="CollisionShape" type="CollisionShape" parent="Ceiling/StaticBody"]
-shape = SubResource( 3 )
-
-[node name="Wall0" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 0 )
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Wall0"]
-collision_layer = 2
-collision_mask = 12
-
-[node name="CollisionShape" type="CollisionShape" parent="Wall0/StaticBody"]
-shape = SubResource( 6 )
-
-[node name="Wall1" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0 )
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Wall1"]
-collision_layer = 2
-collision_mask = 12
-
-[node name="CollisionShape" type="CollisionShape" parent="Wall1/StaticBody"]
-shape = SubResource( 6 )
+[node name="Wall1" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." groups=[
 "player",
@@ -136,8 +65,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, -9 )
 [node name="SpiderSpawn3" type="Position3D" parent="SpiderSpawns"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, -9 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 7 )
+[node name="WorldEnvironment" parent="." instance=ExtResource( 4 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -73.9744
+margin_right = 110.0
+margin_bottom = 73.9744
+__meta__ = {
+"_edit_use_anchors_": true
+}
 [connection signal="round_end" from="." to="Player" method="_on_Map_round_end"]
 [connection signal="wave_start" from="Player" to="." method="_on_Player_wave_start"]
 [connection signal="timeout" from="EnemySpawns" to="." method="_on_EnemySpawns_timeout"]

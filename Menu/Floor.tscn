@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Map/metall005-new-tileable.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 5, 0.5, 20 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -2.5, 0.25, 10, 2.5, 0.25, 10, -2.5, -0.25, 10, 2.5, 0.25, 10, 2.5, -0.25, 10, -2.5, -0.25, 10, 2.5, 0.25, -10, -2.5, 0.25, -10, 2.5, -0.25, -10, -2.5, 0.25, -10, -2.5, -0.25, -10, 2.5, -0.25, -10, 2.5, 0.25, 10, 2.5, 0.25, -10, 2.5, -0.25, 10, 2.5, 0.25, -10, 2.5, -0.25, -10, 2.5, -0.25, 10, -2.5, 0.25, -10, -2.5, 0.25, 10, -2.5, -0.25, -10, -2.5, 0.25, 10, -2.5, -0.25, 10, -2.5, -0.25, -10, 2.5, 0.25, 10, -2.5, 0.25, 10, 2.5, 0.25, -10, -2.5, 0.25, 10, -2.5, 0.25, -10, 2.5, 0.25, -10, -2.5, -0.25, 10, 2.5, -0.25, 10, -2.5, -0.25, -10, 2.5, -0.25, 10, 2.5, -0.25, -10, -2.5, -0.25, -10 )
+
+[node name="Floor" type="MeshInstance"]
+transform = Transform( 1, 2.1285e-10, -5.18475e-13, -2.1285e-10, 0.999988, -0.00486945, -5.18475e-13, 0.00486945, 0.999988, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_mask = 14
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )

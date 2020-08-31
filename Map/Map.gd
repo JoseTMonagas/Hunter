@@ -27,6 +27,11 @@ func _ready() -> void:
 	player._start_wave()
 
 
+
+# game start function
+
+
+
 func _create_enemy(enemy: KinematicBody, pos: Vector3) -> void:
 	enemy.difficulty += wave_count * 0.15
 	$Enemies.add_child(enemy)
@@ -83,4 +88,6 @@ func _on_EnemySpawns_timeout():
 				_create_spider(random_pos)
 		
 		enemy_spawn.wait_time = rand_range(0.5, 2)
+
+
 

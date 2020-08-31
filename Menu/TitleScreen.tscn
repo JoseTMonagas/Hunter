@@ -1,50 +1,59 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Menu/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Meshes/Ceiling.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Meshes/WorldEnvironment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Meshes/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Meshes/Wall1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Meshes/Wall0.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/TitleScreen.gd" type="Script" id=6]
+[ext_resource path="res://Resources/dynamicCreepsterFont.tres" type="DynamicFontData" id=7]
 
-[node name="TitleScreen" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0.447059, 0.0588235, 0.0588235, 1 )
+font_data = ExtResource( 7 )
 
-[node name="Rows" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="TitleScreen" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="NewGame" type="Button" parent="."]
 margin_left = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Padding" type="Label" parent="Rows"]
-margin_top = 260.0
-margin_right = 1004.0
-margin_bottom = 274.0
-size_flags_vertical = 6
-
-[node name="Start" type="Button" parent="Rows"]
-margin_top = 538.0
-margin_right = 89.0
-margin_bottom = 558.0
-size_flags_horizontal = 0
+margin_top = 479.988
+margin_right = 98.0
+margin_bottom = 499.988
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.52549, 0, 0, 1 )
 text = "TITLE_START"
 flat = true
-align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Exit" type="Button" parent="Rows"]
-margin_top = 562.0
-margin_right = 78.0
-margin_bottom = 582.0
-size_flags_horizontal = 0
+[node name="ExitGame" type="Button" parent="."]
+margin_left = 20.0
+margin_top = 517.743
+margin_right = 108.0
+margin_bottom = 543.743
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.52549, 0, 0, 1 )
 text = "TITLE_EXIT"
 flat = true
-align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Padding2" type="Label" parent="Rows"]
-margin_top = 586.0
-margin_right = 1004.0
-margin_bottom = 600.0
-[connection signal="pressed" from="Rows/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="Rows/Exit" to="." method="_on_Exit_pressed"]
+[node name="Ceiling" parent="." instance=ExtResource( 1 )]
+
+[node name="Floor" parent="." instance=ExtResource( 3 )]
+
+[node name="Wall0" parent="." instance=ExtResource( 5 )]
+
+[node name="Wall1" parent="." instance=ExtResource( 4 )]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54693, 8.24193 )
+[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="ExitGame" to="." method="_on_ExitGame_pressed"]
