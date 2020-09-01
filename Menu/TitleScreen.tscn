@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Menu/Meshes/Ceiling.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Menu/Meshes/WorldEnvironment.tscn" type="PackedScene" id=2]
@@ -15,7 +15,12 @@ outline_color = Color( 0.447059, 0.0588235, 0.0588235, 1 )
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 72
+size = 98
+extra_spacing_char = 10
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
 font_data = ExtResource( 7 )
 
 [sub_resource type="Animation" id=3]
@@ -39,6 +44,7 @@ tracks/0/keys = {
 script = ExtResource( 6 )
 
 [node name="NewGame" type="Button" parent="."]
+visible = false
 margin_left = 20.0
 margin_top = 479.988
 margin_right = 98.0
@@ -86,10 +92,10 @@ anchor_left = 0.5
 anchor_top = 0.163
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -113.941
-margin_top = 10.6548
-margin_right = 114.059
-margin_bottom = -106.545
+margin_left = -158.438
+margin_top = 8.53587
+margin_right = 161.562
+margin_bottom = -77.6641
 theme = ExtResource( 8 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.533333, 0.0156863, 0.0156863, 1 )
@@ -102,18 +108,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InsertCoin" type="Label" parent="."]
-margin_left = 369.302
-margin_top = 264.859
-margin_right = 653.302
-margin_bottom = 301.859
+[node name="InsertCoin" type="Button" parent="."]
+margin_left = 367.183
+margin_top = 413.184
+margin_right = 651.183
+margin_bottom = 457.184
 theme = ExtResource( 8 )
-custom_colors/font_color = Color( 0.772772, 0.35658, 0.35658, 0.701214 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.77532, 0.363781, 0.363781, 0.694754 )
 text = "TITLE_INSERT_COIN"
-align = 1
-valign = 1
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,3 +127,4 @@ method_call_mode = 1
 anims/InsertDick = SubResource( 3 )
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="ExitGame" to="." method="_on_ExitGame_pressed"]
+[connection signal="pressed" from="InsertCoin" to="." method="_on_InsertCoin_pressed"]
