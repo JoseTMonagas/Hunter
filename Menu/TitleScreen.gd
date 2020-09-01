@@ -1,6 +1,14 @@
 extends Spatial
 
 
+onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
+func _ready():
+	animation_player.play("InsertDick")
+	pass
+
+
 func _on_NewGame_pressed():
 	get_tree().change_scene("res://Map/Map.tscn")
 

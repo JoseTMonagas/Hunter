@@ -76,7 +76,7 @@ anims/Hurt = SubResource( 1 )
 anims/WaveStart = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53751, 0.465008 )
+transform = Transform( 0.908858, -3.94881e-07, 0.417106, 0.124092, 0.954719, -0.270392, -0.398219, 0.297508, 0.867704, 0, 1.53751, 0.465008 )
 current = true
 fov = 52.4569
 
@@ -143,44 +143,44 @@ __meta__ = {
 }
 
 [node name="Padding" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 53.0
+margin_top = 46.0
 margin_right = 1004.0
-margin_bottom = 73.0
+margin_bottom = 71.0
 size_flags_vertical = 6
 
 [node name="WaveLabel" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 130.0
+margin_top = 122.0
 margin_right = 1004.0
-margin_bottom = 150.0
+margin_bottom = 147.0
 theme = ExtResource( 2 )
-custom_colors/font_color = Color( 0.686275, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.815686, 0.682353, 0.682353, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
 
 [node name="Padding5" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 207.0
+margin_top = 197.0
 margin_right = 1004.0
-margin_bottom = 227.0
+margin_bottom = 222.0
 size_flags_vertical = 6
 
 [node name="ReloadingLabel" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 284.0
+margin_top = 273.0
 margin_right = 1004.0
-margin_bottom = 304.0
+margin_bottom = 298.0
 theme = ExtResource( 2 )
 align = 1
 
 [node name="Padding4" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 361.0
+margin_top = 348.0
 margin_right = 1004.0
-margin_bottom = 381.0
+margin_bottom = 373.0
 size_flags_vertical = 6
 
 [node name="Bullets" type="HBoxContainer" parent="HUD/GUI/Rows"]
-margin_top = 438.0
+margin_top = 424.0
 margin_right = 1004.0
-margin_bottom = 470.0
+margin_bottom = 456.0
 
 [node name="Bullet" type="TextureRect" parent="HUD/GUI/Rows/Bullets"]
 margin_right = 32.0
@@ -245,14 +245,14 @@ __meta__ = {
 }
 
 [node name="Padding2" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 474.0
+margin_top = 460.0
 margin_right = 1004.0
-margin_bottom = 494.0
+margin_bottom = 485.0
 
 [node name="Hearts" type="HBoxContainer" parent="HUD/GUI/Rows"]
-margin_top = 498.0
+margin_top = 489.0
 margin_right = 1004.0
-margin_bottom = 530.0
+margin_bottom = 521.0
 
 [node name="Heart" type="TextureRect" parent="HUD/GUI/Rows/Hearts"]
 margin_right = 32.0
@@ -272,13 +272,13 @@ margin_bottom = 32.0
 texture = ExtResource( 5 )
 
 [node name="Padding3" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 534.0
+margin_top = 525.0
 margin_right = 1004.0
-margin_bottom = 554.0
+margin_bottom = 550.0
 
 [node name="ScoreLabel" type="Label" parent="HUD/GUI/Rows"]
-margin_top = 558.0
+margin_top = 554.0
 margin_right = 1004.0
-margin_bottom = 578.0
+margin_bottom = 579.0
 theme = ExtResource( 2 )
 [connection signal="timeout" from="Reloading" to="." method="_on_Reloading_timeout"]
